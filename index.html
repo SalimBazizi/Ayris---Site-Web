@@ -2,12 +2,479 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/assets/images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AYRIS - Eau de source naturelle</title>
+    <title>AYRIS - EAU DE SOURCE PURE</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-container">
+        <a href="#" class="logo">
+          <img src="assets/images/logo.png" alt="AYRIS Logo" class="nav-logo" />
+        </a>
+        <button class="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#accueil" class="nav-link">Accueil</a></li>
+          <li><a href="#composition" class="nav-link">Composition</a></li>
+          <li><a href="#produits" class="nav-link">Produits</a></li>
+          <li><a href="#impact" class="nav-link">Impact</a></li>
+          <li><a href="#processus" class="nav-link">Processus</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>
+            <span>A</span><span>Y</span><span>R</span><span>I</span><span>S</span><span>,</span
+            ><br />
+            <span>u</span><span>n</span><span>e</span> <span>e</span><span>a</span><span>u</span>
+            <span>p</span><span>u</span><span>r</span><span>e</span><br />
+            <span class="text-bleu">
+              <span>p</span><span>o</span><span>u</span><span>r</span> <span>c</span><span>h</span
+              ><span>a</span><span>q</span><span>u</span><span>e</span> <br /><span>m</span
+              ><span>o</span><span>m</span><span>e</span><span>n</span><span>t</span>
+            </span>
+          </h1>
+          <p class="animate-on-scroll hero-description">
+            Découvrez le goût pur de la nature avec notre eau minérale premium, provenant des
+            profondeurs des sources de montagne.
+          </p>
+          <a href="#produits" class="cta-button animate-on-scroll">Découvrir nos produits</a>
+        </div>
+        <div class="hero-image">
+          <img src="assets/images/Bouteilles.png" alt="Bouteille AYRIS" class="animate-on-scroll" />
+        </div>
+      </div>
+      <div class="waves">
+        <svg viewBox="0 0 1920 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            class="wave wave1"
+            d="M0,160 Q240,220,480,160 Q720,100,960,160 Q1200,220,1440,160 Q1680,100,1920,160 L1920,320 L0,320 Z"
+          ></path>
+          <path
+            class="wave wave2"
+            d="M0,180 Q240,120,480,180 Q720,240,960,180 Q1200,120,1440,180 Q1680,240,1920,180 L1920,320 L0,320 Z"
+          ></path>
+          <path
+            class="wave wave3"
+            d="M0,160 Q240,200,480,160 Q720,120,960,160 Q1200,200,1440,160 Q1680,120,1920,160 L1920,320 L0,320 Z"
+          ></path>
+          <path
+            class="wave wave4"
+            d="M0,180 Q240,140,480,180 Q720,220,960,180 Q1200,140,1440,180 Q1680,220,1920,180 L1920,320 L0,320 Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Section Composition -->
+    <section id="composition" class="composition-section">
+      <p class="composition-subtitle fade-up delay-1">Ce qu'il y a dedans</p>
+
+      <h2 class="composition-title fade-up">
+        Notre Composition
+        <div class="wave-separator fade-in delay-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 30">
+            <path
+              fill="none"
+              stroke="#21b6ff"
+              stroke-width="2"
+              d="M0,15 Q25,0 50,15 Q75,30 100,15 Q125,0 150,15 Q175,30 200,15 Q225,0 250,15 Q275,30 300,15 Q325,0 350,15 Q375,30 400,15 Q425,0 450,15 Q475,30 500,15 Q525,0 550,15 Q575,30 600,15"
+            />
+          </svg>
+        </div>
+      </h2>
+      <div class="composition-container">
+        <div class="composition-left">
+          <div class="composition-item fade-left delay-2">
+            <h3>Calcium+</h3>
+            <p class="value">5-12 mg/dm3</p>
+            <p class="description">Contribue à la solidité des os et des dents.</p>
+          </div>
+          <div class="composition-item fade-left delay-3">
+            <h3>Magnésium</h3>
+            <p class="value">2-5 mg/dm3</p>
+            <p class="description">Essentiel pour le bon fonctionnement musculaire.</p>
+          </div>
+          <div class="composition-item fade-left delay-4">
+            <h3>Sodium</h3>
+            <p class="value">20-25 mg/dm3</p>
+            <p class="description">Maintient l'équilibre hydrique du corps.</p>
+          </div>
+        </div>
+
+        <div class="composition-center">
+          <img src="assets/images/verre-eau.png" alt="Verre d'eau Ayris" class="scale-up delay-1" />
+        </div>
+
+        <div class="composition-right">
+          <div class="composition-item fade-right delay-2">
+            <h3>Chlore</h3>
+            <p class="value">~46 mg/dm3</p>
+            <p class="description">Contribue à la digestion et à l'équilibre acido-basique.</p>
+          </div>
+          <div class="composition-item fade-right delay-3">
+            <h3>Acidité</h3>
+            <p class="value">6.8-7.3</p>
+            <p class="description">pH équilibré pour une meilleure absorption.</p>
+          </div>
+          <div class="composition-item fade-right delay-4">
+            <h3>Minéralisation</h3>
+            <p class="value">90-140 mg/dm3</p>
+            <p class="description">Teneur optimale en minéraux essentiels.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produits Section -->
+    <section id="produits" class="products-section">
+      <div class="products-title">
+        <span class="fade-up">Nos Produits</span>
+        <h2 class="fade-up delay-1">
+          Découvrez Notre Gamme
+          <div class="wave-separator fade-in delay-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 30">
+              <path
+                fill="none"
+                stroke="#21b6ff"
+                stroke-width="2"
+                d="M0,15 Q25,0 50,15 Q75,30 100,15 Q125,0 150,15 Q175,30 200,15 Q225,0 250,15 Q275,30 300,15 Q325,0 350,15 Q375,30 400,15 Q425,0 450,15 Q475,30 500,15 Q525,0 550,15 Q575,30 600,15"
+              />
+            </svg>
+          </div>
+        </h2>
+      </div>
+      <div class="products-grid">
+        <div class="product-card fade-up delay-2">
+          <div class="product-image">
+            <img src="assets/images/0.5L.jpg" alt="Bouteille AYRIS 0.25L" />
+          </div>
+          <div class="product-info">
+            <h3>Bouteille 0.25L</h3>
+            <p>Parfaite pour les déplacements</p>
+            <a href="#" class="product-button">Découvrir</a>
+          </div>
+        </div>
+
+        <div class="product-card fade-up delay-3">
+          <div class="product-image">
+            <img src="assets/images/pack-12x0.5L.jpg" alt="Bouteille AYRIS 0.5L" />
+          </div>
+          <div class="product-info">
+            <h3>Bouteille 0.5L</h3>
+            <p>Idéale pour une journée active</p>
+            <a href="#" class="product-button">Découvrir</a>
+          </div>
+        </div>
+
+        <div class="product-card fade-up delay-4">
+          <div class="product-image">
+            <img src="assets/images/0.5L.jpg" alt="Bouteille AYRIS 1.5L" />
+          </div>
+          <div class="product-info">
+            <h3>Bouteille 1.5L</h3>
+            <p>Format familial quotidien</p>
+            <a href="#" class="product-button">Découvrir</a>
+          </div>
+        </div>
+
+        <div class="product-card fade-up delay-4">
+          <div class="product-image">
+            <img src="assets/images/pack-12x0.5L.jpg" alt="Bouteille AYRIS 1.5L" />
+          </div>
+          <div class="product-info">
+            <h3>Bouteille 1.5L</h3>
+            <p>Format familial quotidien</p>
+            <a href="#" class="product-button">Découvrir</a>
+          </div>
+        </div>
+
+        <div class="product-card fade-up delay-4">
+          <div class="product-image">
+            <img src="assets/images/0.5L.jpg" alt="Bouteille AYRIS 1.5L" />
+          </div>
+          <div class="product-info">
+            <h3>Bouteille 1.5L</h3>
+            <p>Format familial quotidien</p>
+            <a href="#" class="product-button">Découvrir</a>
+          </div>
+        </div>
+
+        <div class="product-card fade-up delay-4">
+          <div class="product-image">
+            <img src="assets/images/pack-12x0.5L.jpg" alt="Bouteille AYRIS 1.5L" />
+          </div>
+          <div class="product-info">
+            <h3>Bouteille 1.5L</h3>
+            <p>Format familial quotidien</p>
+            <a href="#" class="product-button">Découvrir</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact-section">
+      <div class="impact-content">
+        <div class="impact-left">
+          <img
+            src="assets/images/eco-friendly.jpg"
+            alt="Impact Environnemental"
+            class="impact-image"
+          />
+          <div class="impact-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+        </div>
+        <div class="impact-right">
+          <div class="impact-tag">Eco-Responsable</div>
+
+          <h2>Notre Impact<br />Environnemental</h2>
+          <p class="impact-description">
+            Notre engagement pour l'environnement se traduit par des actions concrètes et
+            mesurables. Nous visons à réduire notre empreinte carbone tout en préservant les
+            ressources naturelles.
+          </p>
+          <div class="impact-metrics">
+            <div class="metric-item">
+              <div class="metric-icon">
+                <i class="fas fa-sun"></i>
+              </div>
+              <div class="metric-content">
+                <h3>Énergie Renouvelable</h3>
+                <p>100% de nos sites alimentés en énergie verte</p>
+              </div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-icon">
+                <i class="fas fa-tint"></i>
+              </div>
+              <div class="metric-content">
+                <h3>Gestion de l'Eau</h3>
+                <p>Réduction de 40% de notre consommation d'eau</p>
+              </div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-icon">
+                <i class="fas fa-recycle"></i>
+              </div>
+              <div class="metric-content">
+                <h3>Économie Circulaire</h3>
+                <p>Recyclage de 95% de nos déchets industriels</p>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="impact-button">En savoir plus</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Processus Section -->
+    <section id="processus" class="process-section">
+      <span class="process-title">Notre Processus</span>
+      <h2 class="process-heading fade-up delay-1">
+        Comment Nous Travaillons
+        <div class="wave-separator fade-in delay-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 30">
+            <path
+              fill="none"
+              stroke="#21b6ff"
+              stroke-width="2"
+              d="M0,15 Q25,0 50,15 Q75,30 100,15 Q125,0 150,15 Q175,30 200,15 Q225,0 250,15 Q275,30 300,15 Q325,0 350,15 Q375,30 400,15 Q425,0 450,15 Q475,30 500,15 Q525,0 550,15 Q575,30 600,15"
+            />
+          </svg>
+        </div>
+      </h2>
+      <div class="process-content">
+        <div class="process-image fade-up delay-2">
+          <img src="assets/images/processus-extraction.png" alt="Processus d'extraction de l'eau" />
+        </div>
+        <p class="process-description fade-up delay-3">
+          Notre processus d'extraction unique préserve la pureté naturelle de l'eau tout en
+          maintenant ses propriétés minérales essentielles.
+        </p>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+      <span class="blog-title">Notre Blog</span>
+      <h2 class="blog-heading fade-up delay-1">
+        Dernières Actualités
+        <div class="wave-separator fade-in delay-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 30">
+            <path
+              fill="none"
+              stroke="#21b6ff"
+              stroke-width="2"
+              d="M0,15 Q25,0 50,15 Q75,30 100,15 Q125,0 150,15 Q175,30 200,15 Q225,0 250,15 Q275,30 300,15 Q325,0 350,15 Q375,30 400,15 Q425,0 450,15 Q475,30 500,15 Q525,0 550,15 Q575,30 600,15"
+            />
+          </svg>
+        </div>
+      </h2>
+      <div class="blog-grid">
+        <article class="blog-card fade-up delay-2">
+          <div class="blog-image">
+            <img src="assets/images/blog-1.jpg" alt="Que contient votre eau ?" />
+          </div>
+          <div class="blog-content">
+            <h3>Que contient votre eau ?</h3>
+            <p>
+              Découvrez les bienfaits des minéraux présents dans notre eau et leur importance pour
+              votre santé quotidienne.
+            </p>
+            <span class="blog-date">25 septembre 2024</span>
+            <a href="#" class="blog-link">Lire plus <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up delay-3">
+          <div class="blog-image">
+            <img src="assets/images/blog-2.jpg" alt="Pourquoi boire de l'eau ?" />
+          </div>
+          <div class="blog-content">
+            <h3>Pourquoi boire de l'eau ?</h3>
+            <p>
+              Les raisons essentielles de s'hydrater correctement et les avantages d'une bonne
+              hydratation pour votre corps.
+            </p>
+            <span class="blog-date">25 septembre 2024</span>
+            <a href="#" class="blog-link">Lire plus <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card fade-up delay-4">
+          <div class="blog-image">
+            <img src="assets/images/blog-3.jpg" alt="L'eau peut prévenir les maux de tête" />
+          </div>
+          <div class="blog-content">
+            <h3>L'eau peut prévenir les maux de tête</h3>
+            <p>
+              Comment une hydratation régulière peut vous aider à éviter les maux de tête et
+              améliorer votre bien-être.
+            </p>
+            <span class="blog-date">25 septembre 2024</span>
+            <a href="#" class="blog-link">Lire plus <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <span class="contact-title">Contactez-nous</span>
+      <h2 class="contact-heading fade-up delay-1">
+        Contactez-Nous
+        <div class="wave-separator fade-in delay-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 30">
+            <path
+              fill="none"
+              stroke="#21b6ff"
+              stroke-width="2"
+              d="M0,15 Q25,0 50,15 Q75,30 100,15 Q125,0 150,15 Q175,30 200,15 Q225,0 250,15 Q275,30 300,15 Q325,0 350,15 Q375,30 400,15 Q425,0 450,15 Q475,30 500,15 Q525,0 550,15 Q575,30 600,15"
+            />
+          </svg>
+        </div>
+      </h2>
+      <div class="contact-container">
+        <form class="contact-form fade-up delay-2">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" placeholder="John Doe" />
+            </div>
+            <div class="form-group">
+              <label for="email">Adresse email</label>
+              <input type="email" id="email" placeholder="john@example.com" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <input type="text" id="subject" placeholder="Comment pouvons-nous vous aider ?" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              class="contact-textarea"
+              id="message"
+              rows="5"
+              placeholder="Écrivez votre message ici..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">Envoyer le message →</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="AYRIS Logo" class="footer-logo" />
+          <p>Eau de source naturelle premium pour vos besoins quotidiens en hydratation.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Liens rapides</h3>
+          <ul class="footer-links">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#products">Produits</a></li>
+            <li><a href="#gallery">Galerie</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Informations</h3>
+          <div class="footer-contact">
+            <p><i class="fas fa-phone"></i> +213 34 36 02 969</p>
+            <p><i class="fas fa-envelope"></i> ayrisf@yahoo.fr</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> RN 26 BUZEROUAL AKBOU, 06001 W. BEJAIA ALGERIA
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Suivez-nous</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 SARL. NOMADE. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
