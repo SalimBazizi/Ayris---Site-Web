@@ -450,54 +450,54 @@ h6 {
 }
 
 .wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  height: 80px;
-  background: url("assets/images/wave.png");
-  background-size: 1000px 80px;
-  animation: animate 20s linear infinite;
+  height: 100%;
+  animation: waveAnimation 10s linear infinite;
+  transform-origin: center bottom;
 }
 
-.wave.wave1 {
-  opacity: 1;
+.wave1 {
+  fill: rgba(255, 255, 255, 0.1);
+  animation-duration: 12s;
   animation-delay: 0s;
-  z-index: 1000;
-  height: 60px;
-  background-size: 1000px 60px;
 }
 
-.wave.wave2 {
-  opacity: 0.5;
-  animation-delay: -5s;
-  z-index: 999;
-  height: 50px;
-  background-size: 1000px 50px;
-}
-
-.wave.wave3 {
-  opacity: 0.2;
+.wave2 {
+  fill: rgba(255, 255, 255, 0.2);
+  animation-duration: 10s;
   animation-delay: -2s;
-  z-index: 998;
-  height: 40px;
-  background-size: 1000px 40px;
 }
 
-.wave.wave4 {
-  opacity: 0.7;
-  animation-delay: -5s;
-  z-index: 997;
-  height: 45px;
-  background-size: 1000px 45px;
+.wave3 {
+  fill: rgba(255, 255, 255, 0.3);
+  animation-duration: 8s;
+  animation-delay: -3s;
 }
 
-@keyframes animate {
+.wave4 {
+  fill: rgba(255, 255, 255, 1);
+  animation-duration: 6s;
+  animation-delay: -4s;
+}
+
+@keyframes waveAnimation {
   0% {
-    background-position-x: 0;
+    d: path(
+      "M0,160 C300,80,600,220,900,160 C1200,100,1500,240,1800,160 C2100,80,2400,220,2700,160 L2700,320 L0,320 Z"
+    );
+    transform: translateX(0);
+  }
+  50% {
+    d: path(
+      "M0,160 C300,220,600,80,900,160 C1200,240,1500,100,1800,160 C2100,220,2400,80,2700,160 L2700,320 L0,320 Z"
+    );
+    transform: translateX(-2%);
   }
   100% {
-    background-position-x: 1000px;
+    d: path(
+      "M0,160 C300,80,600,220,900,160 C1200,100,1500,240,1800,160 C2100,80,2400,220,2700,160 L2700,320 L0,320 Z"
+    );
+    transform: translateX(0);
   }
 }
 
