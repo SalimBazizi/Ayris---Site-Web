@@ -199,6 +199,20 @@ h6 {
   margin-bottom: 1.5rem;
   line-height: 1.2;
   position: relative;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .hero-content h1 span {
@@ -442,7 +456,7 @@ h6 {
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  height: 30vh;
+  height: 25vh;
   overflow: hidden;
   line-height: 0;
   pointer-events: none;
@@ -494,19 +508,19 @@ h6 {
     d: path(
       "M0,160 C300,80,600,220,900,160 C1200,100,1500,240,1800,160 C2100,80,2400,220,2700,160 L2700,320 L0,320 Z"
     );
-    transform: translateX(0);
+    transform: translateX(40);
   }
   50% {
     d: path(
       "M0,160 C300,220,600,80,900,160 C1200,240,1500,100,1800,160 C2100,220,2400,80,2700,160 L2700,320 L0,320 Z"
     );
-    transform: translateX(-2%);
+    transform: translateX(-4%);
   }
   100% {
     d: path(
       "M0,160 C300,80,600,220,900,160 C1200,100,1500,240,1800,160 C2100,80,2400,220,2700,160 L2700,320 L0,320 Z"
     );
-    transform: translateX(0);
+    transform: translateX(12);
   }
 }
 
@@ -531,7 +545,7 @@ h6 {
 
 .wave-medium {
   animation: waveFlow 4s infinite ease-in-out;
-  animation-delay: -2s;
+  animation-delay: -3s;
 }
 
 .wave-fast {
@@ -800,7 +814,8 @@ h6 {
 .product-card {
   background: white;
   text-align: center;
-  transition: var(--transition);
+  transition: all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8) !important;
+
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -825,8 +840,13 @@ h6 {
   transition: transform 0.3s ease;
 }
 
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
 .product-card:hover .product-image img {
-  transform: scale(1.05) !important;
+  transform: scale(1.05);
 }
 
 .product-info {
@@ -967,6 +987,9 @@ h6 {
   font-size: 0.9rem;
   margin-bottom: 1rem;
   backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .impact-content {
@@ -982,6 +1005,15 @@ h6 {
   flex: 1;
   position: relative;
   height: 700px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.impact-right {
+  flex: 1;
+  padding-right: 2rem;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .impact-image {
@@ -1009,11 +1041,6 @@ h6 {
 .impact-icon i {
   color: white;
   font-size: 1.2rem;
-}
-
-.impact-right {
-  flex: 1;
-  padding-right: 2rem;
 }
 
 .impact-right h2 {
@@ -1045,14 +1072,16 @@ h6 {
   background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 16px;
-  border: 1px solid #21b6ff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.3, 0.8, 0.3, 2.3);
+
+  margin-bottom: 1rem;
 }
 
 .metric-item:hover {
-  background: rgba(255, 255, 255, 0.15);
   transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .metric-icon {
@@ -1220,7 +1249,7 @@ h6 {
   color: var(--primary-color);
   font-size: 2.8rem;
   font-weight: bold;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
   position: relative;
 }
 
@@ -1370,15 +1399,15 @@ h6 {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8) !important;
   text-align: left;
   display: flex;
   flex-direction: column;
 }
 
 .blog-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .blog-image {
@@ -2419,4 +2448,41 @@ h6 {
 
 .header.scrolled .nav-line {
   background: var(--secondary-color);
+}
+
+.process-image {
+  position: relative;
+  cursor: pointer;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.play-button::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 0 15px 25px;
+  border-color: transparent transparent transparent var(--primary-color);
+  margin-left: 5px;
+}
+
+.play-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
