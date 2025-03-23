@@ -58,7 +58,7 @@
             </span>
           </h1>
           <p class="animate-on-scroll hero-description">
-            Découvrez le goût pur de la nature avec notre eau minérale premium, provenant des
+            Découvrez le goût pur de la nature avec notre eau de source premium, provenant des
             profondeurs des sources de montagne.
           </p>
           <a href="#produits" class="cta-button animate-on-scroll">Découvrir nos produits</a>
@@ -405,7 +405,14 @@
           <div class="form-row">
             <div class="form-group">
               <label for="name">Nom complet</label>
-              <input type="text" id="name" name="name" autocomplete="name" placeholder="John Doe" />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                placeholder="John Doe"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="email">Adresse email</label>
@@ -415,6 +422,7 @@
                 name="email"
                 autocomplete="email"
                 placeholder="john@example.com"
+                required
               />
             </div>
           </div>
@@ -427,6 +435,7 @@
               name="subject"
               autocomplete="off"
               placeholder="Comment pouvons-nous vous aider ?"
+              required
             />
           </div>
 
@@ -439,6 +448,7 @@
               autocomplete="off"
               rows="5"
               placeholder="Écrivez votre message ici..."
+              required
             ></textarea>
           </div>
 
