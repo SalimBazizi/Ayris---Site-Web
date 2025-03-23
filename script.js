@@ -1,67 +1,65 @@
-// Données des articles du blog
-const blogPosts = [
-  {
-    id: 1,
-    title: "Les bienfaits de l'eau minérale",
-    image: "public/images/articles/water-benefits.jpg",
-    excerpt: "Découvrez pourquoi l'eau minérale est essentielle pour votre santé.",
-    date: "15 Mars 2024",
+// Détails des produits
+const productDetails = {
+  "Bouteille 0.25L": {
+    description:
+      "Notre format compact idéal pour les déplacements. Parfaite pour les enfants et les petites soifs, cette bouteille s'intègre facilement dans tous les sacs.",
+    image: "assets/images/0.5L.jpg",
   },
-  {
-    id: 2,
-    title: "Composition minérale : tout savoir",
-    image: "public/images/articles/mineral-composition.jpg",
-    excerpt: "Guide complet sur la composition minérale de l'eau.",
-    date: "10 Mars 2024",
+  "Bouteille 0.5L": {
+    description:
+      "Le format équilibré pour une hydratation optimale tout au long de la journée. Idéale pour le sport et les activités quotidiennes.",
+    image: "assets/images/pack-12x0.5L.jpg",
   },
-  {
-    id: 3,
-    title: "Prévenir les maux de tête",
-    image: "public/images/articles/headache-prevention.jpg",
-    excerpt: "Comment l'hydratation aide à prévenir les maux de tête.",
-    date: "5 Mars 2024",
+  "Bouteille 1.5L": {
+    description:
+      "Notre format familial, parfait pour les repas et l'hydratation quotidienne à la maison ou au bureau.",
+    image: "assets/images/0.5L.jpg",
   },
-];
+  "Bouteille 5L": {
+    description:
+      "Une solution économique pour les familles, idéale pour un stockage pratique et une utilisation prolongée.",
+    image: "assets/images/pack-12x0.5L.jpg",
+  },
+  "Bouteille 8L": {
+    description:
+      "Notre plus grand format, parfait pour les événements ou une consommation intensive. Une solution économique et écologique.",
+    image: "assets/images/0.5L.jpg",
+  },
+  "Pack 12x1.5L": {
+    description:
+      "Pack familial économique, idéal pour un approvisionnement mensuel. Une solution pratique pour toute la famille.",
+    image: "assets/images/pack-12x0.5L.jpg",
+  },
+};
 
-// Fonction pour créer les cartes d'articles du blog avec animation
-function createBlogCards() {
-  const blogGrid = document.querySelector(".blog-grid");
-  if (!blogGrid) return;
+// Attendre que le DOM soit complètement chargé
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialisation du menu mobile
+  initMobileMenu();
 
-  blogPosts.forEach((post, index) => {
-    const card = document.createElement("div");
-    card.className = "blog-card";
-    card.style.opacity = "0";
-    card.style.transform = "translateY(20px)";
-    card.innerHTML = `
-      <div class="blog-image">
-        <img src="${post.image}" alt="${post.title}">
-        <div class="blog-overlay">
-          <span class="read-more">Lire plus</span>
-        </div>
-      </div>
-      <div class="blog-info">
-        <span class="date">${post.date}</span>
-        <h3>${post.title}</h3>
-        <p>${post.excerpt}</p>
-      </div>
-    `;
-    blogGrid.appendChild(card);
+  // Initialisation des animations de cartes
+  initCardAnimations();
 
-    // Animation d'apparition avec délai
-    setTimeout(() => {
-      card.style.transition = "all 0.5s ease-out";
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }, index * 200);
-  });
-}
+  // Initialisation des animations d'icônes
+  initIconAnimations();
 
-// Gestion du menu mobile amélioré
+  // Initialisation des animations d'impact
+  initImpactAnimations();
+
+  // Initialisation du modal des produits
+  initProductModal();
+
+  // Initialisation du formulaire de contact
+  initContactForm();
+
+  // Initialisation des animations de scroll
+  initScrollAnimations();
+});
+
+// Fonction pour initialiser le menu mobile
 function initMobileMenu() {
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navLinks = document.querySelector(".nav-links");
-  const header = document.querySelector(".header");
 
   if (!mobileMenuBtn || !navLinks) return;
 
@@ -79,30 +77,148 @@ function initMobileMenu() {
   });
 }
 
-// Variables pour le scroll
-let lastScrollTop = 0;
-let header = document.querySelector(".header");
+// Fonction pour initialiser les animations de cartes
+function initCardAnimations() {
+  const cards = document.querySelectorAll(".impact-item, .product-card, .blog-card");
 
-// Fonction pour gérer le scroll de la navbar
-window.addEventListener("scroll", () => {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  cards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-10px)";
+      card.style.boxShadow = "var(--hover-shadow)";
+    });
 
-  // Ajoute la classe scrolled si on a défilé plus de 100px
-  if (scrollTop > 100) {
-    header.classList.add("scrolled");
-    header.style.transform = "translateY(0)";
-  } else {
-    // Au top de la page
-    header.classList.remove("scrolled");
-    header.style.transform = "translateY(0)";
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0)";
+      card.style.boxShadow = "var(--card-shadow)";
+    });
+  });
+}
+
+// Fonction pour initialiser les animations d'icônes
+function initIconAnimations() {
+  const icons = document.querySelectorAll(".impact-icon");
+
+  icons.forEach((icon) => {
+    icon.addEventListener("mouseenter", () => {
+      icon.style.transform = "scale(1.1) rotate(5deg)";
+    });
+
+    icon.addEventListener("mouseleave", () => {
+      icon.style.transform = "scale(1) rotate(0)";
+    });
+  });
+}
+
+// Fonction pour initialiser les animations de la section Impact
+function initImpactAnimations() {
+  const impactSection = document.querySelector(".impact-section");
+  if (!impactSection) return;
+
+  const impactLeft = impactSection.querySelector(".impact-left");
+  const impactRight = impactSection.querySelector(".impact-right");
+  const metricItems = impactSection.querySelectorAll(".metric-item");
+
+  const impactObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px",
+    }
+  );
+
+  if (impactLeft) impactObserver.observe(impactLeft);
+  if (impactRight) impactObserver.observe(impactRight);
+  metricItems.forEach((item) => impactObserver.observe(item));
+}
+
+// Fonction pour initialiser le modal des produits
+function initProductModal() {
+  const productModal = document.querySelector(".product-modal");
+  const productModalClose = document.querySelector(".product-modal-close");
+  const productButtons = document.querySelectorAll(".product-button");
+
+  console.log("Modal:", productModal);
+  console.log("Close button:", productModalClose);
+  console.log("Product buttons:", productButtons.length);
+
+  if (!productModal || !productModalClose || !productButtons.length) {
+    console.error("Éléments du modal non trouvés");
+    return;
   }
 
-  lastScrollTop = scrollTop;
-});
+  productButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("Button clicked");
 
-// Gestion du formulaire de contact amélioré
+      const productCard = button.closest(".product-card");
+      if (!productCard) {
+        console.error("Product card not found");
+        return;
+      }
+
+      const productTitle = productCard.querySelector(".product-info h3").textContent;
+      console.log("Product title:", productTitle);
+
+      const productInfo = productDetails[productTitle];
+      console.log("Product info:", productInfo);
+
+      if (productInfo) {
+        const modalImage = productModal.querySelector(".product-modal-image img");
+        const modalTitle = productModal.querySelector(".product-modal-info h3");
+        const modalDescription = productModal.querySelector(".product-description");
+
+        modalImage.src = productInfo.image;
+        modalImage.alt = productTitle;
+        modalTitle.textContent = productTitle;
+        modalDescription.textContent = productInfo.description;
+
+        // Forcer un reflow avant d'ajouter la classe active
+        void productModal.offsetWidth;
+
+        productModal.style.display = "flex";
+        setTimeout(() => {
+          productModal.classList.add("active");
+        }, 10);
+
+        document.body.style.overflow = "hidden";
+      } else {
+        console.error("Product info not found for:", productTitle);
+      }
+    });
+  });
+
+  productModalClose.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    closeModal();
+  });
+
+  productModal.addEventListener("click", function (e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+
+  function closeModal() {
+    productModal.classList.remove("active");
+    setTimeout(() => {
+      productModal.style.display = "none";
+      document.body.style.overflow = "";
+    }, 400); // Attendre la fin de l'animation
+  }
+}
+
+// Fonction pour initialiser le formulaire de contact
 function initContactForm() {
-  const contactForm = document.getElementById("contact-form");
+  const contactForm = document.querySelector(".contact-form");
   if (!contactForm) return;
 
   const formGroups = contactForm.querySelectorAll(".form-group");
@@ -129,9 +245,6 @@ function initContactForm() {
     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
     submitButton.disabled = true;
 
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-
     try {
       // Simuler un délai d'envoi
       await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -141,23 +254,44 @@ function initContactForm() {
       formGroups.forEach((group) => group.classList.remove("focused"));
 
       // Afficher le message de succès
-      const successMessage = document.createElement("div");
-      successMessage.className = "success-message";
-      successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Message envoyé avec succès !';
-      contactForm.appendChild(successMessage);
+      submitButton.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
 
       setTimeout(() => {
-        successMessage.remove();
-      }, 3000);
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+      }, 2000);
     } catch (error) {
       console.error("Erreur lors de l'envoi du message:", error);
-      alert("Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.");
-    } finally {
-      submitButton.innerHTML = originalText;
-      submitButton.disabled = false;
+      submitButton.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erreur';
+
+      setTimeout(() => {
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+      }, 2000);
     }
   });
 }
+
+// Variables pour le scroll
+let lastScrollTop = 0;
+let header = document.querySelector(".header");
+
+// Fonction pour gérer le scroll de la navbar
+window.addEventListener("scroll", () => {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Ajoute la classe scrolled si on a défilé plus de 100px
+  if (scrollTop > 100) {
+    header.classList.add("scrolled");
+    header.style.transform = "translateY(0)";
+  } else {
+    // Au top de la page
+    header.classList.remove("scrolled");
+    header.style.transform = "translateY(0)";
+  }
+
+  lastScrollTop = scrollTop;
+});
 
 // Fonction pour observer les éléments et déclencher les animations
 const observerOptions = {
@@ -188,9 +322,6 @@ function initScrollAnimations() {
   });
 }
 
-// Initialise les animations au chargement de la page
-document.addEventListener("DOMContentLoaded", initScrollAnimations);
-
 // Animation des nombres dans les statistiques
 function animateNumber(element) {
   const target = parseInt(element.textContent);
@@ -219,93 +350,4 @@ document.addEventListener("mousemove", (e) => {
     const y = (window.innerHeight - e.pageY * speed) / 100;
     element.style.transform = `translateX(${x}px) translateY(${y}px)`;
   });
-});
-
-// Animation des cartes au survol
-document.querySelectorAll(".impact-item, .product-card, .blog-card").forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    card.style.transform = "translateY(-10px)";
-    card.style.boxShadow = "var(--hover-shadow)";
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "translateY(0)";
-    card.style.boxShadow = "var(--card-shadow)";
-  });
-});
-
-// Animation des icônes
-document.querySelectorAll(".impact-icon").forEach((icon) => {
-  icon.addEventListener("mouseenter", () => {
-    icon.style.transform = "scale(1.1) rotate(5deg)";
-  });
-
-  icon.addEventListener("mouseleave", () => {
-    icon.style.transform = "scale(1) rotate(0)";
-  });
-});
-
-// Animation du menu mobile
-const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-const navLinks = document.querySelector(".nav-links");
-
-mobileMenuBtn.addEventListener("click", () => {
-  mobileMenuBtn.classList.toggle("active");
-  navLinks.classList.toggle("active");
-});
-
-// Fermer le menu mobile lors du clic sur un lien
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileMenuBtn.classList.remove("active");
-    navLinks.classList.remove("active");
-  });
-});
-
-// Animation du formulaire de contact
-const form = document.getElementById("contact-form");
-const formGroups = document.querySelectorAll(".form-group");
-
-formGroups.forEach((group) => {
-  const input = group.querySelector("input, textarea");
-  const label = group.querySelector("label");
-
-  input.addEventListener("focus", () => {
-    group.classList.add("focused");
-  });
-
-  input.addEventListener("blur", () => {
-    if (!input.value) {
-      group.classList.remove("focused");
-    }
-  });
-});
-
-// Gestion de la soumission du formulaire
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  // Animation du bouton
-  const submitButton = form.querySelector(".submit-button");
-  submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-
-  // Simulation d'envoi
-  setTimeout(() => {
-    submitButton.innerHTML = '<i class="fas fa-check"></i>';
-
-    // Réinitialisation après 2 secondes
-    setTimeout(() => {
-      submitButton.innerHTML = '<span>Envoyer</span><i class="fas fa-paper-plane"></i>';
-      form.reset();
-      formGroups.forEach((group) => group.classList.remove("focused"));
-    }, 2000);
-  }, 1500);
-});
-
-// Appeler la fonction au chargement de la page
-document.addEventListener("DOMContentLoaded", () => {
-  createBlogCards();
-  initMobileMenu();
-  initContactForm();
-  initScrollAnimations();
 });

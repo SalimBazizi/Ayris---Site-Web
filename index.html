@@ -175,7 +175,7 @@
           <div class="product-info">
             <h3>Bouteille 0.25L</h3>
             <p>Parfaite pour les déplacements</p>
-            <a href="#" class="product-button">Découvrir</a>
+            <button class="product-button">Découvrir</button>
           </div>
         </div>
 
@@ -186,7 +186,7 @@
           <div class="product-info">
             <h3>Bouteille 0.5L</h3>
             <p>Idéale pour une journée active</p>
-            <a href="#" class="product-button">Découvrir</a>
+            <button class="product-button">Découvrir</button>
           </div>
         </div>
 
@@ -197,7 +197,7 @@
           <div class="product-info">
             <h3>Bouteille 1.5L</h3>
             <p>Format familial quotidien</p>
-            <a href="#" class="product-button">Découvrir</a>
+            <button class="product-button">Découvrir</button>
           </div>
         </div>
 
@@ -208,7 +208,7 @@
           <div class="product-info">
             <h3>Bouteille 5L</h3>
             <p>Solution économique familiale</p>
-            <a href="#" class="product-button">Découvrir</a>
+            <button class="product-button">Découvrir</button>
           </div>
         </div>
 
@@ -219,7 +219,7 @@
           <div class="product-info">
             <h3>Bouteille 8L</h3>
             <p>pour une hydratation optimale</p>
-            <a href="#" class="product-button">Découvrir</a>
+            <button class="product-button">Découvrir</button>
           </div>
         </div>
 
@@ -230,7 +230,7 @@
           <div class="product-info">
             <h3>Pack 12x1.5L</h3>
             <p>Pack familial économique</p>
-            <a href="#" class="product-button">Découvrir</a>
+            <button class="product-button">Découvrir</button>
           </div>
         </div>
       </div>
@@ -405,17 +405,29 @@
           <div class="form-row">
             <div class="form-group">
               <label for="name">Nom complet</label>
-              <input type="text" id="name" placeholder="John Doe" />
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="John Doe" />
             </div>
             <div class="form-group">
               <label for="email">Adresse email</label>
-              <input type="email" id="email" placeholder="john@example.com" />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                placeholder="john@example.com"
+              />
             </div>
           </div>
 
           <div class="form-group">
             <label for="subject">Sujet</label>
-            <input type="text" id="subject" placeholder="Comment pouvons-nous vous aider ?" />
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              autocomplete="off"
+              placeholder="Comment pouvons-nous vous aider ?"
+            />
           </div>
 
           <div class="form-group">
@@ -423,6 +435,8 @@
             <textarea
               class="contact-textarea"
               id="message"
+              name="message"
+              autocomplete="off"
               rows="5"
               placeholder="Écrivez votre message ici..."
             ></textarea>
@@ -437,7 +451,9 @@
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/images/logo.png" alt="AYRIS Logo" class="footer-logo" />
+          <a href="#accueil">
+            <img src="assets/images/logo.png" alt="AYRIS Logo" class="footer-logo" />
+          </a>
           <p>Eau de source naturelle premium pour vos besoins quotidiens en hydratation.</p>
         </div>
 
@@ -476,6 +492,35 @@
       </div>
     </footer>
 
+    <!-- Modal des Produits -->
+    <div class="product-modal">
+      <div class="product-modal-content">
+        <button class="product-modal-close">&times;</button>
+        <div class="product-modal-image">
+          <img src="" alt="" />
+        </div>
+        <div class="product-modal-info">
+          <h3></h3>
+          <p class="product-description"></p>
+          <div class="product-specs">
+            <div class="spec-item">
+              <i class="fas fa-tint"></i>
+              <span>Source : Montagnes de l'Atlas</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-box"></i>
+              <span>Matériau : PET recyclable</span>
+            </div>
+            <div class="spec-item">
+              <i class="fas fa-recycle"></i>
+              <span>Emballage : 100% recyclable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script -->
     <script src="script.js"></script>
   </body>
 </html>
