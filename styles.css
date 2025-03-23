@@ -450,6 +450,23 @@ h6 {
   transform: translateY(0);
 }
 
+.hero .waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
 .waves {
   position: absolute;
   bottom: -30px;
@@ -772,6 +789,15 @@ h6 {
 
   .hero-content .cta-button {
     margin: 0 auto;
+  }
+
+  .hero .waves {
+    bottom: -40px;
+    transform: translateY(-20%);
+  }
+
+  .hero .wave {
+    bottom: 0;
   }
 }
 
@@ -1493,6 +1519,9 @@ h6 {
 }
 
 @media (max-width: 992px) {
+  .nav-logo {
+    scale: 1.2;
+  }
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -2774,5 +2803,26 @@ h6 {
     width: 30px;
     height: 30px;
     font-size: 1.2rem;
+  }
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .wave {
+    bottom: -40px;
+    transform: translateY(-20%);
   }
 }
