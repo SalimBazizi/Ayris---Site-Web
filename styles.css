@@ -164,6 +164,15 @@ h6 {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.header.scrolled .mobile-menu-btn span {
+  background: var(--primary-color);
+  box-shadow: none;
+}
+
+.header.scrolled .mobile-menu-btn.active span {
+  background: white;
+}
+
 /* Hero Section */
 .hero-section {
   min-height: 98vh;
@@ -433,7 +442,7 @@ h6 {
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  height: 35vh;
+  height: 30vh;
   overflow: hidden;
   line-height: 0;
   pointer-events: none;
