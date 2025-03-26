@@ -402,7 +402,11 @@
         </div>
       </h2>
       <div class="contact-container">
-        <form class="contact-form fade-up delay-2">
+        <form
+          class="contact-form fade-up delay-2"
+          action="https://formsubmit.co/el/riyoyi"
+          method="POST"
+        >
           <div class="form-row">
             <div class="form-group">
               <label for="name">Nom complet</label>
@@ -452,6 +456,18 @@
               required
             ></textarea>
           </div>
+
+          <!-- Champs cachés pour personnaliser FormSubmit -->
+          <input type="hidden" name="_subject" value="Nouveau message depuis votre site web !" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://ayris.com/merci.html" />
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="Merci pour votre message ! Nous vous répondrons dans les plus brefs délais."
+          />
+          <input type="hidden" name="_cc" value="services.ayris@gmail.com" />
 
           <button type="submit" class="submit-button">Envoyer le message →</button>
         </form>
